@@ -12,5 +12,6 @@ class rtItem(Item):
     #forum_name = Field()
     topic_url = Field()
     topic_title = Field()
+    topicbody = Field()
     #topic_date = Field()
     #torrent = Field() # data here indicates this was a seeder

@@ -32,6 +32,7 @@ class rtSpider(CrawlSpider):
         url = response.url
         title = x.select("//h1[@class='maintitle']/a/text()").extract()
         # go through list of posters and remove any duplicates
+        topicbody = x.select("//td[@class='message td2']/div/div/text()").extract()
         posters_export = [op]
         for p in posters:
             if (p not in posters_export):
@@ -44,6 +45,7 @@ class rtSpider(CrawlSpider):
             topic['topic_title'] = title
             topic['post_author'] = op
             topic['poster'] = pe
+            topic['topicbody'] = topicbody
             topics.append(topic)
             
         return topics
